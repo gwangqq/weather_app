@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--메뉴 화면 -> setting 화면 들어갔을 때 settingActivity layout-->
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+          android:name="io.abx.myapplication.SettingsFragment"
+          android:id="@+id/weather_settings_fragment"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent" />
