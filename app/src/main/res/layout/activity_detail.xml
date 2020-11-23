@@ -91,16 +91,6 @@
             tools:ignore="MissingConstraints"
             tools:text="3.5" />
 
-        <ImageView
-            android:id="@+id/ic_rain"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            app:layout_constraintEnd_toStartOf="@+id/rain_fall"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/weather_description"
-            app:layout_constraintTop_toTopOf="@+id/rain_fall"
-            app:srcCompat="@drawable/rain" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -124,7 +114,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.5" />
+            app:layout_constraintGuide_percent="0.5"
+            tools:ignore="DuplicateIds" />
 
         <TextView
             android:id="@+id/humidity_label"

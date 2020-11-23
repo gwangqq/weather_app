@@ -40,7 +40,6 @@ public class DetailActivity extends AppCompatActivity {
 
     // 강수량
     private TextView mRainFall;
-    private ImageView mRain;
     //    private TextView mTest;
     public final String TAG = DetailActivity.class.getSimpleName();
 
@@ -60,7 +59,7 @@ public class DetailActivity extends AppCompatActivity {
 
 //      강수량 보여주기(weather id에 따라 보여야 하므로, 처음에는 안보이는 것으로 지정할 것임)
         mRainFall = (TextView) findViewById(R.id.rain_fall);
-        mRain = (ImageView) findViewById(R.id.ic_rain);
+
 //      자잘한 날씨 정보 보여주기
         mHumidity = (TextView) findViewById(R.id.humidity);
         mPressure = (TextView) findViewById(R.id.pressure);
@@ -98,12 +97,10 @@ public class DetailActivity extends AppCompatActivity {
                 // 비올때 강수량 보여주기!
                 mRainFall.setText(detailWeatherData.getJSONObject("rain").getString("3h") + "cm");
                 mRainFall.setVisibility(View.VISIBLE);
-                mRain.setImageResource(R.drawable.rain);
-                mRain.setVisibility(View.VISIBLE);
+
             } else {
                 showDetailWeather(weatherId, detailWeatherData);
                 mRainFall.setVisibility(View.INVISIBLE);
-                mRain.setVisibility(View.INVISIBLE);
             }
         } catch (JSONException e) {
             e.printStackTrace();
