@@ -174,14 +174,13 @@ public class ListActivity extends AppCompatActivity implements
 
 
 
-                if (null != action) {
+                if ( null != action) {
                     Uri data = intent.getData();
                     cityName = data.getQueryParameter("city_name");
-                    GGLogger.getInstance().D("ListActivity test : " + cityName + " action : " + action);
                 } else {
                     cityName = intent.getExtras().getString("city_name");
-                    GGLogger.getInstance().D("ListActivity test : " + cityName + " action : " + action);
                 }
+                GGLogger.getInstance().D("ListActivity test : " + cityName + " action : " + action);
 
 //              SearchCityActivity에서 받아온 cityName을 parameter로 활용하여 URL을 생성해 내기!!
                 URL weatherRequestUrl = NetworkUtils.buildUrl(cityName);
@@ -215,10 +214,12 @@ public class ListActivity extends AppCompatActivity implements
             }
 
             // doInBackground 에서 받아온 정보를 전달해주는 method
+
             public void deliverResult(JSONObject data) {
                 GGLogger.getInstance().D(">>> deliverResult(JSONObject data)");
-
                 mWeatherData = data;
+                //GGLogger.getInstance().D(">>> check what is in data ::: " + data.toString());
+
                 super.deliverResult(data);
             }
 
