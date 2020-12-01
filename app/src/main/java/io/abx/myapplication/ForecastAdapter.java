@@ -162,15 +162,10 @@ public class ForecastAdapter extends
     // 재활용할 view 몇개 만들어야 할지 data 개수를 반환하는 method
     @Override
     public int getItemCount() {
-
         if (null == mWeatherData) {
-            GGLogger.getInstance().D(">>>ForecastAdapter getItemCount() is called >>>>  " + 0);
             return 0;
         }
-
-        int len = mWeatherData.length;
-
-        return len;
+        return mWeatherData.length;
     }
 
     // String[] 형태로 넘어온 weatherData -> 위에 선언한 mWeatherData
