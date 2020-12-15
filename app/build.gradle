@@ -7,8 +7,8 @@ android {
         applicationId "io.abx.myapplication"
         minSdkVersion 16
         targetSdkVersion 30
-        versionCode 4
-        versionName "1.4"
+        versionCode 5
+        versionName "1.5"
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
