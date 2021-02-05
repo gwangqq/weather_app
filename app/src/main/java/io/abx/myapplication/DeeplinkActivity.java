@@ -57,7 +57,7 @@ public class DeeplinkActivity extends AppCompatActivity implements AdBrixRm.Defe
 
     }
 
-
+//  deferred deeplink listener
     @Override
     public void onReceiveDeferredDeeplink(String s) {
         GGLogger.getInstance().D("===============");
