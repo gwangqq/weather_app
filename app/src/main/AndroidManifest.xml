@@ -17,22 +17,6 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <!--<activity
-            android:name="com.igaworks.v2.core.application.AbxDefaultDeeplinkActivity"
-            android:label="@string/app_name"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
-            android:noHistory="true">
-            <intent-filter android:label="@string/">
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                &lt;!&ndash;딥링크 스키마와 호스트를 입력합니다. &ndash;&gt;
-                <data android:scheme="jake" android:host="deeplink" />
-            </intent-filter>
-            &lt;!&ndash; AbxDefaultDeeplinkActivity가 오픈할 실제 딥링크 액티비티의 path를 android:value에 설정합니다. &ndash;&gt;
-            <meta-data android:name="AbxRedirectActivity" android:value="com.example.android.sunshine.ListActivity"/>
-        </activity>-->
-
         <activity android:name=".DeeplinkActivity"
             android:launchMode="singleTask">
             <intent-filter>
@@ -59,18 +43,6 @@
             android:label="@string/app_name"
             android:launchMode="singleTop">
 
-            <!-- adb 이용하여 deep-link open
-                 deeplink handler 사용하여 변경-->
-            <!--<intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="list"
-                    android:scheme="jake" />
-            </intent-filter>-->
         </activity>
         <activity
             android:name=".DetailActivity"
@@ -93,42 +65,24 @@
                     android:scheme="jake" />
             </intent-filter>
         </activity>
-        <!-- adbrix sdk 연동 가이드! -->
-        <!--
-        <meta-data
-        android:name="AdBrixRmAppKey"
-        android:value="Gzh8ovoHjkOJtN2NDZUIkw" />
-        <meta-data
-            android:name="AdBrixRmSecretKey"
-            android:value="J3pKtrNT7ke7p9Xhr4RDsw" />
-        <meta-data
-            android:name="19327da43293b1dce56da3a83829ccaf434bb68ef83ab61a2dca61d3bb15f2be"
-            android:value="true" />
-        -->
-        <meta-data
-            android:name="AdBrixRmAppKey"
-            android:value="A5rMExypwk6qKAmu3ezFDA" />
-        <meta-data
-            android:name="AdBrixRmSecretKey"
-            android:value="5aCTd34GykyGFskV3zpTRw" />
-        <receiver
-            android:name="com.igaworks.v2.core.push.notification.AbxPushReceiver"
+
+        <receiver android:name="com.igaworks.v2.core.push.notification.AbxPushReceiver"
             android:exported="true"
             android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-                <action android:name="com.igaworks.v2.core.pushServiceImplement.CLIENT_PUSH_RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.igaworks.v2.core.pushServiceImplement.CLIENT_PUSH_RECEIVE"/>
             </intent-filter>
         </receiver>
 
         <!--for Growth Action-->
-       <!-- <service
+        <service
             android:name=".MyFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
-        </service>-->
+        </service>
 
 
     </application>
