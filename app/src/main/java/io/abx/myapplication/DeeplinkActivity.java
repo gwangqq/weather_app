@@ -7,14 +7,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.igaworks.v2.core.AdBrixRm;
 import io.abx.myapplication.utilities.GGLogger;
 
-public class DeeplinkActivity extends AppCompatActivity implements AdBrixRm.DeferredDeeplinkListener{
+public class DeeplinkActivity extends AppCompatActivity
+//        implements AdBrixRm.DeferredDeeplinkListener
+{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         onNewIntent(DeeplinkActivity.this.getIntent());
         GGLogger.getInstance().D("onCreate() in DeeplinkActivity  =========  city_name : " );
 
-        AdBrixRm.setDeferredDeeplinkListener(this);
+//        AdBrixRm.setDeferredDeeplinkListener(this);
     }
 
     // do Something when deep-link is called
@@ -58,9 +60,9 @@ public class DeeplinkActivity extends AppCompatActivity implements AdBrixRm.Defe
     }
 
 //  deferred deeplink listener
-    @Override
+/*    @Override
     public void onReceiveDeferredDeeplink(String s) {
         GGLogger.getInstance().D("===============");
         GGLogger.getInstance().D("DeeplinkActivity Listener : " + s);
-    }
+    }*/
 }
